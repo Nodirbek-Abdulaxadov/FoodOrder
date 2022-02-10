@@ -21,4 +21,8 @@
     <ProjectReference Include="..\FoodOrder.DataLayer\FoodOrder.DataLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+
 </Project>

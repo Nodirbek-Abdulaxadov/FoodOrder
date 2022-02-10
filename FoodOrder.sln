@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrder.WebSite", "FoodOrder.WebSite\FoodOrder.WebSite.csproj", "{4D1F173A-3163-4719-9ED8-4A2A91488D83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrder.WebSite", "FoodOrder.WebSite\FoodOrder.WebSite.csproj", "{4D1F173A-3163-4719-9ED8-4A2A91488D83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrder.Models", "FoodOrder.Models\FoodOrder.Models.csproj", "{2866925C-D591-47A4-8C02-601EA7135B81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrder.Models", "FoodOrder.Models\FoodOrder.Models.csproj", "{2866925C-D591-47A4-8C02-601EA7135B81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrder.DataLayer", "FoodOrder.DataLayer\FoodOrder.DataLayer.csproj", "{AB936FA0-FBC9-418A-8BD1-73F938C6877A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrder.DataLayer", "FoodOrder.DataLayer\FoodOrder.DataLayer.csproj", "{AB936FA0-FBC9-418A-8BD1-73F938C6877A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrder.Services", "FoodOrder.Services\FoodOrder.Services.csproj", "{33AC777E-4160-46C6-8B6F-F6495E6CBF13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrder.Services", "FoodOrder.Services\FoodOrder.Services.csproj", "{33AC777E-4160-46C6-8B6F-F6495E6CBF13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrder.Desktop", "FoodOrder.Desktop\FoodOrder.Desktop.csproj", "{B64CD095-CC83-4DEF-9DFE-716C2981775C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{33AC777E-4160-46C6-8B6F-F6495E6CBF13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33AC777E-4160-46C6-8B6F-F6495E6CBF13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33AC777E-4160-46C6-8B6F-F6495E6CBF13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B64CD095-CC83-4DEF-9DFE-716C2981775C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B64CD095-CC83-4DEF-9DFE-716C2981775C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B64CD095-CC83-4DEF-9DFE-716C2981775C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B64CD095-CC83-4DEF-9DFE-716C2981775C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

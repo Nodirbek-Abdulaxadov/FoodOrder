@@ -8,5 +8,20 @@ namespace FoodOrder.WebSite.Controllers
         {
             return View();
         }
+
+        public IActionResult About()
+        {
+            return View();
+        }
+
+        public IActionResult Book()
+        {
+            return View();
+        }
+
+        public IActionResult Menu()
+        {
+            return View();
+        }
     }
 }
