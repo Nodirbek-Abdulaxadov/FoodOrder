@@ -20,6 +20,5 @@ namespace FoodOrder.Models
         public string Rasmi { get; set; }
         [Required]
         public Guid KategoriyaId { get; set; }
-        public Guid UserId { get; set; }
     }
 }

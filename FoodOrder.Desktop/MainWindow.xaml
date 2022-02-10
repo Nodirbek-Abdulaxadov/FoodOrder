@@ -6,34 +6,31 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="650" Width="1100" MinWidth="650">
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.25*"/>
             <ColumnDefinition Width="0.75*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Background="#3498db">
-            <Image Source="brand.jpg" Height="100" Width="100" Margin="10"/>
+
+            <Image Source="Assets/brand.jpg" Width="150" Height="150" />
 
             <Button Content="Bosh sahifa" VerticalAlignment="Center" 
                     Margin="30,30,30,10" Height="30" Background="blue" 
-                    BorderThickness="0">
-            </Button>
+                    BorderThickness="0"/>
             <Button Content="Kategoriyalar" VerticalAlignment="Center" 
                     Margin="30,10,30,10" Height="30" Background="blue" 
-                    BorderThickness="0">
-            </Button>
+                    BorderThickness="0"/>
             <Button Content="Mahsulotlar" VerticalAlignment="Center" 
                     Margin="30,10,30,10" Height="30" Background="blue" 
-                    BorderThickness="0">
-            </Button>
+                    BorderThickness="0"/>
             <Button Content="Chiqish" Margin="30,200,30,10" Height="30" Background="Red" 
-                    BorderThickness="0">
-            </Button>
+                    BorderThickness="0"/>
         </StackPanel>
 
         <Grid Grid.Column="1" Background="#ecf0f1">
-            
+
         </Grid>
     </Grid>
 </Window>
