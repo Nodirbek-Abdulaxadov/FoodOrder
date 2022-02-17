@@ -13,11 +13,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrder.Services", "FoodO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrder.Desktop", "FoodOrder.Desktop\FoodOrder.Desktop.csproj", "{B64CD095-CC83-4DEF-9DFE-716C2981775C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrder.Winform", "FoodOrder.Winform\FoodOrder.Winform.csproj", "{54EDD9B4-793A-43DD-93D0-FDD69331C4F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrder.Winform", "FoodOrder.Winform\FoodOrder.Winform.csproj", "{54EDD9B4-793A-43DD-93D0-FDD69331C4F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrder.API", "FoodOrder.API\FoodOrder.API.csproj", "{6BECAF47-4D4B-4CC9-B82B-66287C1CAFED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrder.API", "FoodOrder.API\FoodOrder.API.csproj", "{6BECAF47-4D4B-4CC9-B82B-66287C1CAFED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrder.ViewModels", "FoodOrder.ViewModels\FoodOrder.ViewModels.csproj", "{57E0C693-91D9-431E-B049-C59C0508F75A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrder.ViewModels", "FoodOrder.ViewModels\FoodOrder.ViewModels.csproj", "{57E0C693-91D9-431E-B049-C59C0508F75A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B364049B-FE30-4C42-B827-5EAF6882821B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

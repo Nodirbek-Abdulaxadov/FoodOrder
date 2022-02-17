@@ -10,11 +10,13 @@
 
   <ItemGroup>
     <PackageReference Include="materialdesignthemes" Version="4.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FoodOrder.Models\FoodOrder.Models.csproj" />
     <ProjectReference Include="..\FoodOrder.Services\FoodOrder.Services.csproj" />
+    <ProjectReference Include="..\FoodOrder.ViewModels\FoodOrder.ViewModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,10 +32,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\NewFolder\" />
   </ItemGroup>
 
 </Project>

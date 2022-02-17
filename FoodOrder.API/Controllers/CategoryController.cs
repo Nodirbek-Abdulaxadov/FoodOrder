@@ -39,9 +39,9 @@ namespace FoodOrder.API.Controllers
             return Ok(json);
         }
         [HttpPut, Route("update")]
-        public async Task<IActionResult> Update(Kategoriya kategoriya)
+        public async Task<IActionResult> Update(KategoriyaViewModel kategoriya)
         {
-            var json = await _kategoriya.UpdateKategoriya(kategoriya);
+            var json = await _kategoriya.UpdateKategoriya((Kategoriya)kategoriya);
             return Ok(json);
         }
         [HttpDelete, Route("delete/{id}")]

@@ -31,6 +31,7 @@ namespace FoodOrder.Services.Repository
             Kategoriya kategoriya = _dbContext.Kategoriyalar
                                  .FirstOrDefault(m => m.Id == id);
             _dbContext.Remove(kategoriya);
+            _dbContext.SaveChanges();
             return Task.FromResult(0);
         }
 
@@ -49,6 +50,7 @@ namespace FoodOrder.Services.Repository
         public Task<Kategoriya> UpdateKategoriya(Kategoriya kategoriya)
         {
             _dbContext.Kategoriyalar.Update(kategoriya);
+            _dbContext.SaveChanges();
             return Task.FromResult(kategoriya);
         }
     }

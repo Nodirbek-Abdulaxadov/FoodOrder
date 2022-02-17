@@ -1,6 +1,7 @@
 ﻿using FoodOrder.DataLayer;
 using FoodOrder.Services.Interface;
 using FoodOrder.Services.Repository;
+using FoodOrder.Winform.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,12 +23,27 @@ namespace FoodOrder.Winform.Pages
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            Add();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private async void Add()
+        {
+            CategoryAPIService service = new CategoryAPIService();
+            bool res = await service.AddCategory(name.Text);
+            if (res)
+            {
+                MessageBox.Show("Muvoffaqqiyatli qo'shildi!", "Xabarnoma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else 
+            {
+                MessageBox.Show("Xatolik yuz berdi!", "Xabarnoma", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

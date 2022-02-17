@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using FoodOrder.Winform.Services;
 
 namespace FoodOrder.Winform.Pages
 {
@@ -15,6 +7,23 @@ namespace FoodOrder.Winform.Pages
         public Dashboard()
         {
             InitializeComponent();
+            timer1.Start();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+        public void Refresh()
+        {
+            CategoryAPIService service = new CategoryAPIService();
+            categoriyaCount.Text = service.GetKategoriyalar().Count.ToString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Refresh();
         }
     }
 }
