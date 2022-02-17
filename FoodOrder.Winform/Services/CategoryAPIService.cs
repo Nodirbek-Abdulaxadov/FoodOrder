@@ -11,12 +11,12 @@ namespace FoodOrder.Winform.Services
 {
     public class CategoryAPIService
     {
-        string baseUrl = "https://foodorderapi20220210145144.azurewebsites.net/api/";
+        string baseUrl = "https://foodorderapi20220210145144.azurewebsites.net/api/category/";
         public List<Kategoriya> Kategoriyalar { get; set; }
         HttpClient client;
         public List<Kategoriya> GetKategoriyalar()
         {
-            string url = baseUrl + "category/getall";
+            string url = baseUrl + "getall";
             client = new HttpClient();
 
             var json = client.GetStringAsync(url).Result;
@@ -39,7 +39,7 @@ namespace FoodOrder.Winform.Services
             var json = JsonConvert.SerializeObject(viewModel);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
             
-            var res = client.PostAsync("category/add", data).Result;
+            var res = client.PostAsync("add", data).Result;
             
             if (res.IsSuccessStatusCode)
             {
@@ -63,7 +63,7 @@ namespace FoodOrder.Winform.Services
             var json = JsonConvert.SerializeObject(viewModel);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var res = client.PutAsync("category/update", data).Result;
+            var res = client.PutAsync("update", data).Result;
 
             if (res.IsSuccessStatusCode)
             {
@@ -76,7 +76,7 @@ namespace FoodOrder.Winform.Services
         public bool DeleteCategory(string id)
         {
             client = new HttpClient();
-            string url = baseUrl + "category/delete/" + id;
+            string url = baseUrl + "delete/" + id;
             var res = client.DeleteAsync(url).Result;
 
             if (res.IsSuccessStatusCode)

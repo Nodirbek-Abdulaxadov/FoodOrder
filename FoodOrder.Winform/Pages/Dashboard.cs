@@ -7,7 +7,6 @@ namespace FoodOrder.Winform.Pages
         public Dashboard()
         {
             InitializeComponent();
-            timer1.Start();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
