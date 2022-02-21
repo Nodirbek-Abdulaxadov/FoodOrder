@@ -31,6 +31,7 @@ namespace FoodOrder.Services.Repository
             Mahsulot mahsulot = _dbContext.Mahsulotlar
                                 .FirstOrDefault(m => m.Id == id);
             _dbContext.Remove(mahsulot);
+            _dbContext.SaveChanges();
             return Task.FromResult(0);
         }
 
@@ -43,6 +44,7 @@ namespace FoodOrder.Services.Repository
         public Task<Mahsulot> UpdateMahsulot(Mahsulot mahsulot)
         {
             _dbContext.Mahsulotlar.Update(mahsulot);
+            _dbContext.SaveChanges();
             return Task.FromResult(mahsulot);
         }
     }

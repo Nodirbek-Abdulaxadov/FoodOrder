@@ -16,8 +16,8 @@ namespace FoodOrder.Models
         public string Batafsil { get; set; }
         [Required]
         public double Narxi { get; set; }
-        [Required]
-        public string Rasmi { get; set; }
+        //[Required]
+        //public string Rasmi { get; set; }
         [Required]
         public Guid KategoriyaId { get; set; }
     }

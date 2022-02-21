@@ -1,4 +1,5 @@
 ﻿using FoodOrder.Models;
+using FoodOrder.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,32 @@ namespace FoodOrder.Winform.Services
             var list = JsonConvert.DeserializeObject<List<Mahsulot>>(json);
 
             return list;
+        }
+
+        public async Task<bool> AddProduct(MahsulotViewModel mahsulot)
+        {
+            try
+            {
+                client = new HttpClient();
+                client.BaseAddress = new Uri(baseUrl);
+
+                var json = JsonConvert.SerializeObject(mahsulot);
+                var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var res = client.PostAsync("add", data).Result;
+                MessageBox.Show(res.ToString());
+
+                if (res.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);                
+            }
+
+            return false;
         }
     }
 }

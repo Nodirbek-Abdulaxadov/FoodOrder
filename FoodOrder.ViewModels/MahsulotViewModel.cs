@@ -1,10 +1,6 @@
 ﻿using FoodOrder.Models;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FoodOrder.ViewModels
 {
@@ -21,8 +17,8 @@ namespace FoodOrder.ViewModels
         public string Batafsil { get; set; }
         [Required]
         public double Narxi { get; set; }
-        [Required]
-        public string Rasmi { get; set; }
+        //[Required]
+        //public byte[] Rasmi { get; set; }
         [Required]
         public Guid KategoriyaId { get; set; }
         public static explicit operator Mahsulot(MahsulotViewModel v)
@@ -32,7 +28,6 @@ namespace FoodOrder.ViewModels
                 Id = v.Id,
                 Nomi = v.Nomi,
                 Batafsil = v.Batafsil,
-                Rasmi = v.Rasmi,
                 Narxi = v.Narxi,
                 KategoriyaId = v.KategoriyaId
             };

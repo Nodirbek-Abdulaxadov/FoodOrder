@@ -22,7 +22,7 @@ namespace FoodOrder.Winform.Pages
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Refresh();
+            
         }
     }
 }

@@ -54,10 +54,6 @@ namespace FoodOrder.DataLayer.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<string>("Rasmi")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<Guid?>("UserId")
                         .HasColumnType("uuid");
 
