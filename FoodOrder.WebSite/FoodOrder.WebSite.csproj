@@ -19,6 +19,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FoodOrder.DataLayer\FoodOrder.DataLayer.csproj" />
+    <ProjectReference Include="..\FoodOrder.Services\FoodOrder.Services.csproj" />
+    <ProjectReference Include="..\FoodOrder.ViewModels\FoodOrder.ViewModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>

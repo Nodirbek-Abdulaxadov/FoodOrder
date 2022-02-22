@@ -1,4 +1,6 @@
 using FoodOrder.DataLayer;
+using FoodOrder.Services.Interface;
+using FoodOrder.Services.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,8 @@ namespace FoodOrder.WebSite
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddTransient<IKategoriyaInterface, KategoriyaRepository>();
+            services.AddTransient<IMahsulotInterface, MahsulotRepository>();
             services.AddDbContext<AppDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("PostgreDB")));
         }

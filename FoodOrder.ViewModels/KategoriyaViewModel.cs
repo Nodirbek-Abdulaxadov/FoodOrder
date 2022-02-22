@@ -23,5 +23,14 @@ namespace FoodOrder.ViewModels
                 Mahsulotlar = null
             };
         }
+
+        public static explicit operator KategoriyaViewModel(Kategoriya v)
+        {
+            return new KategoriyaViewModel()
+            {
+                Id = v.Id,
+                Nomi = v.Nomi
+            };
+        }
     }
 }

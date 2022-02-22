@@ -32,5 +32,17 @@ namespace FoodOrder.ViewModels
                 KategoriyaId = v.KategoriyaId
             };
         }
+
+        public static explicit operator MahsulotViewModel(Mahsulot v)
+        {
+            return new MahsulotViewModel()
+            {
+                Id = v.Id,
+                Nomi = v.Nomi,
+                Batafsil = v.Batafsil,
+                Narxi = v.Narxi,
+                KategoriyaId = v.KategoriyaId
+            };
+        }
     }
 }
