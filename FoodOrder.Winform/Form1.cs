@@ -31,5 +31,10 @@ namespace FoodOrder.Winform
             HideAll();
             products1.Visible = true;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -36,7 +36,6 @@ namespace FoodOrder.Winform.Services
                 var data = new StringContent(json, Encoding.UTF8, "application/json");
 
                 var res = client.PostAsync("add", data).Result;
-                MessageBox.Show(res.ToString());
 
                 if (res.IsSuccessStatusCode)
                 {
@@ -49,6 +48,38 @@ namespace FoodOrder.Winform.Services
             }
 
             return false;
+        }
+
+        internal HttpResponseMessage UpdateProduct(Mahsulot p)
+        {
+            client = new HttpClient();
+            client.BaseAddress = new Uri(baseUrl);
+
+            var json = JsonConvert.SerializeObject(p);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var res = client.PutAsync("update", data).Result;
+
+            return res;
+        }
+
+        internal HttpResponseMessage DeleteProduct(string? selectedId)
+        {
+            client = new HttpClient();
+            string url = baseUrl + "delete/" + selectedId;
+            var res = client.DeleteAsync(url).Result;
+
+            return res;
+        }
+
+        internal Mahsulot GetById(string? selectedId)
+        {
+            client = new HttpClient();
+            string url = baseUrl + "get/" + selectedId;
+            var json = client.GetStringAsync(url).Result;
+            var item = JsonConvert.DeserializeObject<Mahsulot>(json);
+
+            return item;
         }
     }
 }

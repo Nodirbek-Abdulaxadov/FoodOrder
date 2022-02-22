@@ -41,12 +41,12 @@ namespace FoodOrder.Winform.Pages
         OpenFileDialog dialog = new OpenFileDialog();
         private void button3_Click(object sender, EventArgs e)
         {
-            dialog.Filter = "Rasmlar |*.jpg;*jpeg;*png;*bmg;*gif|All files (*.*)|*.*";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                button3.Text = dialog.FileName;
-                pictureBox1.Image = Image.FromFile(dialog.FileName);
-            }
+            //dialog.Filter = "Rasmlar |*.jpg;*jpeg;*png;*bmg;*gif|All files (*.*)|*.*";
+            //if (dialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    button3.Text = dialog.FileName;
+            //    pictureBox1.Image = Image.FromFile(dialog.FileName);
+            //}
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,11 +67,23 @@ namespace FoodOrder.Winform.Pages
                     KategoriyaId = list.FirstOrDefault(c => c.Nomi == categorySelect.Text).Id
                 };
                 ProductAPIService service = new ProductAPIService();
-                _ = await service.AddProduct(mahsulot);
+                bool res = await service.AddProduct(mahsulot);
+                if (res)
+                {
+                    MessageBox.Show("Muvoffaqqiyatli qo'shildi!", "Xabarnoma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Xatolik yuz berdi!", "Xabarnoma", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                this.Close();
             }
         }
     }

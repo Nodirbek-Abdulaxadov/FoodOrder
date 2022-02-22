@@ -18,6 +18,9 @@ namespace FoodOrder.Winform.Pages
         {
             CategoryAPIService service = new CategoryAPIService();
             categoriyaCount.Text = service.GetKategoriyalar().Count.ToString();
+
+            ProductAPIService productAPIService = new ProductAPIService();
+            label3.Text = productAPIService.GetMahsulotlar().Count.ToString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
