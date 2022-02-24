@@ -356,7 +356,7 @@
         <li class="active" data-filter="*">All</li>
         @foreach (var item in Model.Kategoriyalar)
        {
-           <li data-filter=".@item.Nomi">@item.Nomi</li>
+           <li data-filter=".@item.Id">@item.Nomi</li>
        }
       </ul>
 
@@ -364,7 +364,7 @@
         <div class="row grid">
           @foreach (var item in Model.Mahsulotlar)
          {
-              <div class="col-sm-6 col-lg-4 all pizza">
+              <div class="col-sm-6 col-lg-4 all @item.KategoriyaId">
             <div class="box">
               <div>
                 <div class="img-box">
