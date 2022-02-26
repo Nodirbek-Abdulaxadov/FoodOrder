@@ -1,7 +1,12 @@
 ﻿using FoodOrder.Services.Interface;
 using FoodOrder.ViewModels;
+using FoodOrder.WebSite.Areas.Identity.Data;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace FoodOrder.WebSite.Controllers
@@ -11,13 +16,18 @@ namespace FoodOrder.WebSite.Controllers
         public readonly IKategoriyaInterface _kategoriyaInterface;
 
         private readonly IMahsulotInterface _mahsulotInterface;
+        private readonly UserManager<FoodOrderWebSiteUser> _userManager;
 
         public HomeController(IKategoriyaInterface kategoriyaInterface,
-                              IMahsulotInterface mahsulotInterface)
+                              IMahsulotInterface mahsulotInterface,
+                              UserManager<FoodOrderWebSiteUser> userManager)
         {
             _kategoriyaInterface = kategoriyaInterface;
             _mahsulotInterface = mahsulotInterface;
+            _userManager = userManager;
         }
+
+        //[Authorize]
         public async Task<IActionResult> Index()
         {
             List<KategoriyaViewModel> viewList1 = new List<KategoriyaViewModel>();
@@ -74,6 +84,28 @@ namespace FoodOrder.WebSite.Controllers
                 Mahsulotlar = viewList2
             };
             return View("Menu", viewModel);
+        }
+
+        [HttpGet]
+        public IActionResult Korzinka()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddKorzinka(Guid Id)
+        {
+            Add(Id).Wait();
+            return RedirectToAction("Index");
+        }
+
+
+        public async Task Add(Guid Id)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var mahsulotList = await _mahsulotInterface.GetMahsulotlar();
+            var mahsulot = mahsulotList.FirstOrDefault(m => m.Id == Id);
+            user.Korzinka.Add(mahsulot);
         }
     }
 }

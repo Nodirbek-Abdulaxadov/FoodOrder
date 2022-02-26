@@ -1,14 +1,11 @@
-﻿@{
-    ViewData["Title"] = "Book Page";
-    Layout = "_Layout";
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
 }
 
-<div  class="sub_page">
-     <div class="hero_area">
-    <div class="bg-box">
-      <img src="~/images/hero-bg.jpg" alt="">
-    </div>
-    <!-- header section strats -->
+<div class="hero_area" style="background: #222831;">
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
@@ -110,44 +107,50 @@
       </div>
     </header>
     <!-- end header section -->
-  </div>
-
-  <!-- book section -->
-  <section class="book_section layout_padding">
+    
     <div class="container">
-      <div class="heading_container">
-        <h2>
-          Book A Table
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form_container">
-            <form action="">
-              <div>
-                <input type="text" class="form-control" placeholder="Your Name" />
-              </div>
-              <div>
-                <input type="text" class="form-control" placeholder="Phone Number" />
-              </div>
-              <div>
-                <input type="text" class="form-control" placeholder="Enter your adress">
-              </div>
-              <div class="btn_box">
-                <button>
-                  @*<a href="https://api.telegram.org/bot1841305077:AAHaI-frN3F34OgrduV-1YKPvjpPupgZwz4/sendMessage?chat_id=@ffordering&text=SALOM">Book Now</a>*@
-                </button>
-              </div>
-            </form>
-          </div>
+    <h1 style="color: #fff;">@ViewData["Title"]</h1>
+        <div class="row">
+        <div class="col-md-10">
+            <section>
+                <form id="account" method="post">
+                    <h4 style="color: #fff;" class="pt-3">Use a local account to log in.</h4>
+                    <hr />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group my-3">
+                        <label asp-for="Input.Email"  style="color: #fff;"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group my-3">
+                        <label asp-for="Input.Password"  style="color: #fff;"></label>
+                        <input asp-for="Input.Password" class="form-control" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                    <div class="checkbox">
+                        <label asp-for="Input.RememberMe">
+                            <input asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>
+                </div>
+                    <div class="form-group my-3">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                    
+                <div class="form-group">
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                    </p>
+                </div>
+                </form>
+            </section>
         </div>
-        <div class="col-md-6">
-          <div class="map_container ">
-            <div id="googleMap"></div>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
-  <!-- end book section -->
+    </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

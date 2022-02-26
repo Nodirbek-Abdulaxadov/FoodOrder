@@ -6,8 +6,12 @@ body {
   overflow-x: hidden;
 }
 
+.reg-bg {
+    background-image: url("../images/ff-bg.jpg") !important;
+}
+
 .layout_padding {
-  padding: 90px 0;
+    padding: 90px 0;
 }
 
 .layout_padding2 {

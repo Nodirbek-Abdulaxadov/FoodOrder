@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using FoodOrder.WebSite.Areas.Identity.Data
+
+@inject SignInManager<FoodOrderWebSiteUser> SignInManager
+@inject UserManager<FoodOrderWebSiteUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <a id="manage" class="order_online" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+    <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+        <button id="logout" type="submit" class="order_online">Logout</button>
+    </form>
+}
+else
+{
+    <a class="order_online" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+
+    <a class="order_online" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+
+}

@@ -13,6 +13,5 @@ namespace FoodOrder.DataLayer
 
         public DbSet<Kategoriya> Kategoriyalar { get; set; }
         public DbSet<Mahsulot> Mahsulotlar { get; set; }
-        public DbSet<User> Users { get; set; }
     }
 }
