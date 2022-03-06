@@ -92,7 +92,7 @@ namespace FoodOrder.WebSite.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult AddKorzinka(Guid Id)
         {
             Add(Id).Wait();
@@ -106,6 +106,7 @@ namespace FoodOrder.WebSite.Controllers
             var mahsulotList = await _mahsulotInterface.GetMahsulotlar();
             var mahsulot = mahsulotList.FirstOrDefault(m => m.Id == Id);
             user.Korzinka.Add(mahsulot);
+            int a = 4;
         }
     }
 }
